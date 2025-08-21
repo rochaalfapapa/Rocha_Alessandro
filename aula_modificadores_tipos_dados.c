@@ -27,8 +27,19 @@ int main () {
 
     unsigned long int largePositiveNumber = 4000000000;
     printf("Número positivo grande: %lu\n", largePositiveNumber);
+
+    int numeroNormal = 2147483647;
+    long int numeroGrande = 214748364777;
+
+    printf("Número regular (int): %d\n", numeroNormal);
+    printf("Número grande (long int): %ld\n", numeroGrande);
 */
-    
+
+    short int numeroPequeno = 32767;
+    printf("Número pequeno (short int): %d\n", numeroPequeno);
+
+    numeroPequeno = 32768;
+    printf("Número pequeno atualizado (short int): %d\n", numeroPequeno);
 
     return 0;
 }
