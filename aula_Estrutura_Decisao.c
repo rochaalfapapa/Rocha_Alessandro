@@ -77,6 +77,7 @@ int main (){
     printf("Fora IF\n");
     */
 
+    /*
     int estoque = 3;
 
     if (estoque < 5) {
@@ -85,6 +86,18 @@ int main (){
     }
 
     printf("Fora IF\n");
+    */
+
+    int number1, number2;
+    number1 = 10;
+    number2 = 5;
+
+    if(number1>number2){
+
+        printf("O número 1 é maior que o número 2.\n\n");
+    } else {
+        printf("O número 1 é menor que o número 2.\n\n");
+    }
 
     return 0;
 }
