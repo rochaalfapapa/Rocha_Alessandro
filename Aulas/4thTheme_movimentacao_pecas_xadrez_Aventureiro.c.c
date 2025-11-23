@@ -11,8 +11,8 @@ int main () {
     
     
     //Declaração de variável
-    int stepsRook, stepsBishop, stepsQueen, option, controlRook, controlBishop, optionKnight, stepsKnight1, j;
-    char stepsKnight2, directionKnight;
+    int stepsRook, stepsBishop, stepsQueen, option, controlRook, controlBishop, optionKnight, stepsKnight1, stepsKnight2, j;
+    char directionKnight;
 
     printf("\n###### Bem vindo ao jogo de Xadrez ######\n");
 
@@ -92,30 +92,29 @@ int main () {
                 {
                 case 1:
                     printf("Você indicou que o primeiro movimento será para Cima!\n");
-                    printf("Indique a quantidades de casas que serão movimentadas inicialmente para Cima (1 ou 2 casas): ");
+                    printf("Indique a quantidades de casas que serão movimentadas para Cima (1 ou 2 casas): ");
                     scanf("%d", &stepsKnight1);
-                    printf("Indique qual a segunda direção do movimento (d ou e): ");
+                    printf("Indique qual a outra direção do movimento (d ou e): ");
                     scanf(" %c", &directionKnight);
-                    
-                    (stepsKnight1 == 1) ? (stepsKnight2 == 2) : (stepsKnight2 == 1);
-
+                                        
+                    stepsKnight2 = (stepsKnight1 == 1) ? 2 : 1;
+                                        
                     for (int i = 1; i <= stepsKnight1; i++)
                     {
                         j = 1;
-                        do
+
+                        while (j <= stepsKnight2)
                         {
                             if (directionKnight == 'd')
                             {
                                 printf("Direita\n");
-                                j++;
-                            } else
+                            } else if (directionKnight == 'e')
                             {
                                 printf("Esquerda\n");
-                                j++;
                             }
+                            j++;
                             
-                            
-                        } while (j <= stepsKnight2);
+                        }
                         
                         printf("Cima\n");
 
@@ -125,18 +124,96 @@ int main () {
                     break;
                 case 2:
                     printf("Você indicou que o primeiro movimento será para Baixo!\n");
-                    printf("Indique a quantidades de casas que serão movimentadas inicialmente para Baixo (1 ou 2 casas): ");
+                    printf("Indique a quantidades de casas que serão movimentadas para Baixo (1 ou 2 casas): ");
                     scanf("%d", &stepsKnight1);
+                    printf("Indique qual a outra direção do movimento (d ou e): ");
+                    scanf(" %c", &directionKnight);
+                                        
+                    stepsKnight2 = (stepsKnight1 == 1) ? 2 : 1;
+                                        
+                    for (int i = 1; i <= stepsKnight1; i++)
+                    {
+                        j = 1;
+
+                        while (j <= stepsKnight2)
+                        {
+                            if (directionKnight == 'd')
+                            {
+                                printf("Direita\n");
+                            } else if (directionKnight == 'e')
+                            {
+                                printf("Esquerda\n");
+                            }
+                            j++;
+                            
+                        }
+                        
+                        printf("Baixo\n");
+
+                    }
+                    
                     break;
                 case 3:
                     printf("Você indicou que o primeiro movimento será para Direita!\n");
-                    printf("Indique a quantidades de casas que serão movimentadas inicialmente para Direita (1 ou 2 casas): ");
+                    printf("Indique a quantidades de casas que serão movimentadas para Direita (1 ou 2 casas): ");
                     scanf("%d", &stepsKnight1);
+                    printf("Indique qual a outra direção do movimento (c ou b): ");
+                    scanf(" %c", &directionKnight);
+                                        
+                    stepsKnight2 = (stepsKnight1 == 1) ? 2 : 1;
+                                        
+                    for (int i = 1; i <= stepsKnight1; i++)
+                    {
+                        j = 1;
+
+                        while (j <= stepsKnight2)
+                        {
+                            if (directionKnight == 'c')
+                            {
+                                printf("Cima\n");
+                            } else if (directionKnight == 'b')
+                            {
+                                printf("Baixo\n");
+                            }
+                            j++;
+                            
+                        }
+                        
+                        printf("Direita\n");
+
+                    }
+                    
                     break;
                 case 4:
                     printf("Você indicou que o primeiro movimento será para Esquerda!\n");
-                    printf("Indique a quantidades de casas que serão movimentadas inicialmente para Esquerda (1 ou 2 casas): ");
+                    printf("Indique a quantidades de casas que serão movimentadas para Esquerda (1 ou 2 casas): ");
                     scanf("%d", &stepsKnight1);
+                    printf("Indique qual a outra direção do movimento (c ou b): ");
+                    scanf(" %c", &directionKnight);
+                                        
+                    stepsKnight2 = (stepsKnight1 == 1) ? 2 : 1;
+                                        
+                    for (int i = 1; i <= stepsKnight1; i++)
+                    {
+                        j = 1;
+
+                        while (j <= stepsKnight2)
+                        {
+                            if (directionKnight == 'c')
+                            {
+                                printf("Cima\n");
+                            } else if (directionKnight == 'b')
+                            {
+                                printf("Baixo\n");
+                            }
+                            j++;
+                            
+                        }
+                        
+                        printf("Esquerda\n");
+
+                    }
+                    
                     break;
                 case 5:
                     printf("Cancelando movimentação do Cavalo...\n\n");
