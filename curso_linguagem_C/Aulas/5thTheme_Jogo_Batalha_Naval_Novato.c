@@ -7,6 +7,7 @@ int main (){
     int iS1,jS1, shipLength1, control;
     int iS2,jS2, shipLength2;
     char direction1, direction2;
+    int isPlacementValid;
 
     for (int i = 0; i < 10; i++)
     {
@@ -47,10 +48,46 @@ int main (){
             control = 1;
         } else {
             control = 0;
-        }      
+        }
+        
+        if (direction1 == 'h' || direction1 == 'H')
+        {
+            for (int j = jS1; j < (jS1+shipLength1); j++)
+            {
+                if (board[iS1][j] != 0)
+                {
+                    isPlacementValid = 0;
+                    break;
+                } else {
+                    isPlacementValid = 1;
+                }
+                
+            }
+        } else if (direction1 == 'v' || direction1 == 'V')
+        {
+            for (int i = iS1; i < (iS1+shipLength1); i++)
+            {
+                if (board[i][jS1] != 0)
+                {
+                    isPlacementValid = 0;
+                    break;
+                } else {
+                    isPlacementValid = 1;
+                }
+                
+            }
+        
+        }
+        if (!isPlacementValid)
+        {
+            printf("\nO navio está sobrepondo outro navio!\n\n");
+            control = 1;
+        }
+        
 
     } while (control);
     
+
 
     if (direction1 == 'h' || direction1 == 'H')
     {
@@ -88,7 +125,43 @@ int main (){
             control = 1;
         } else {
             control = 0;
-        }      
+        }
+
+
+        if (direction2 == 'h' || direction2 == 'H')
+        {
+            for (int j = jS2; j < (jS2+shipLength2); j++)
+            {
+                if (board[iS2][j] != 0)
+                {
+                    isPlacementValid = 0;
+                    break;
+                } else {
+                    isPlacementValid = 1;
+                }
+                
+            }
+        } else if (direction2 == 'v' || direction2 == 'V')
+        {
+            for (int i = iS2; i < (iS2+shipLength2); i++)
+            {
+                if (board[i][jS2] != 0)
+                {
+                    isPlacementValid = 0;
+                    break;
+                } else {
+                    isPlacementValid = 1;
+                }
+                
+            }
+        
+        }
+        if (!isPlacementValid)
+        {
+            printf("\nO navio está sobrepondo outro navio!\n\n");
+            control = 1;
+        }
+        
 
     } while (control);
     
