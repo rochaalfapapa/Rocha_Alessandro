@@ -112,7 +112,7 @@ int shipPlacement(int board[10][10], int shipID){
 int skillPlacement(int boardSkills[10][10], int skillID) {
 
     int iSkill, jSkill, isPlacementValid = 0;
-    int iSkill2, jSkill2;
+    int iSkill2, jSkill2, iSkill3, jSkill3;
 
     //Posicionando o cone
     do
@@ -148,7 +148,7 @@ int skillPlacement(int boardSkills[10][10], int skillID) {
         {
             if (j >= 0 && j < 10)
             {
-                boardSkills[i][j] = 2;
+                boardSkills[i][j] = 1;
             }
             
         }
@@ -177,18 +177,51 @@ int skillPlacement(int boardSkills[10][10], int skillID) {
     //Caso o posicionamento seja validado com sucesso, a habilidade será posicionada
     int j_right = (jSkill2 + 2);
     int j_left = (jSkill2 - 2);
-    int i_up = (iSkill2 + 1);
-    int i_down = (iSkill2 - 1);
+    int i_up = (iSkill2 - 1);
+    int i_down = (iSkill2 + 1);
 
-    for (int j = j_left; j < j_right; j++)
+    for (int j = j_left; j <= j_right; j++)
     {
-        boardSkills[iSkill2][j] = 2;
+        boardSkills[iSkill2][j] = 1;
     }
-    for (int i = i_up; i > i_down; i--)
+    for (int i = i_up; i <= i_down; i++)
     {
-        boardSkills[i][jSkill2] = 2;
+        boardSkills[i][jSkill2] = 1;
     }
-      
+    
+    //Posicionando o Octaedro
+    
+    do
+    {
+        printf("\n\nIndique a coordenada (linha) inicial da habilidade do Octaedro: ");
+        scanf("%d", &iSkill3);
+        printf("\n\nIndique a coordenada (Coluna) inicial da habilidade do Octaedro: ");
+        scanf("%d", &jSkill3);
+        if (iSkill3 < 0 || iSkill3 > 9 || jSkill3 < 0 || jSkill3 > 9)
+        {
+            isPlacementValid = 0;
+            printf("\nERRO: Coordenadas iniciais devem estar entre 0 e 9!!!\n\n");
+            continue;
+        } else {
+            isPlacementValid = 1;
+        }
+        
+    } while (isPlacementValid == 0);
+
+    //Caso o posicionamento seja validado com sucesso, a habilidade será posicionada
+    int j_right3 = (jSkill3 + 1);
+    int j_left3 = (jSkill3 - 1);
+    int i_up3 = (iSkill3 - 1);
+    int i_down3 = (iSkill3 + 1);
+
+    for (int j = j_left3; j <= j_right3; j++)
+    {
+        boardSkills[iSkill3][j] = 1;
+    }
+    for (int i = i_up3; i <= i_down3; i++)
+    {
+        boardSkills[i][jSkill3] = 1;
+    }
 
 
     return 1;
@@ -227,8 +260,6 @@ int main (){
         }
         printf("\n");
     }
-
-    /*
 
     //Registrando o Navio 1
     shipPlacement(board, 1);
@@ -272,7 +303,6 @@ int main (){
         printf("\n");
     }
 
-    */
 
     printf("\n\n\nVamos agora visualizar o tabuleiro 'limpo' antes de aplicadas as habilidades:\n\n");
    
