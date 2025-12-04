@@ -13,7 +13,7 @@ def gerar_hash_frase(frase):
     return hash_hex
 
 # Exemplo:
-minha_frase = "By A. Rock"
+minha_frase = "sdfasdfasdfasd"
 hash_resultante = gerar_hash_frase(minha_frase)
 
 print(f"Frase original: {minha_frase}")
