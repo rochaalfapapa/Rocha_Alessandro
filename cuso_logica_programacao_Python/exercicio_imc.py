@@ -1,0 +1,7 @@
+peso = eval(input("Insira o peso: "))
+altura = eval(input("Insira a altura: "))
+imc = peso / (altura ** 2)
+print(f"O IMC é {imc:.2f}.")
+print(type(peso))
+print(type(altura))
+print(type(imc))
